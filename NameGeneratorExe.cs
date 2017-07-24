@@ -69,9 +69,6 @@ namespace Tyler.Sterling.NameGenerator
       base.Dispose( disposing );
     }
 
-    protected static extern IntPtr SetWindowsHookEx( HookType code, 
-    {
-    }
     void OnKeyPress( object sender, KeyPressEventArgs e )
     {
       if( ( ( Control.ModifierKeys & Keys.Control ) == Keys.Control ) && e.KeyChar == 'Q' )
