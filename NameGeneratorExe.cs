@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Proj = NameGenerator.Properties;
 using System.Runtime.InteropServices;
 
 namespace Tyler.Sterling.NameGenerator
@@ -43,9 +44,12 @@ namespace Tyler.Sterling.NameGenerator
 
       TrayIcon = new NotifyIcon( );
       TrayIcon.Text = "Name Generator";
-      TrayIcon.Icon = new Icon( SystemIcons.Application, 40, 40 );
+      TrayIcon.Icon = new Icon( Proj.Resources.AppIcon , 40, 40 );
       TrayIcon.ContextMenu = TrayMenu;
       TrayIcon.Visible = true;
+
+      TrayIcon.Click += GenerateName;
+      TrayIcon.DoubleClick += Exit;
 
       Form f = new Form( );
       f.Visible = false;
